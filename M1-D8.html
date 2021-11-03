@@ -18,14 +18,18 @@
   </head>
   <body>
     <div id="buttons">
+      <button onclick="changeTitle()">Change title</button>
+      <button onclick="addClassToTitle()">Add class to title</button>
       <button onclick="changePcontent()">Change paragraphs inside a div</button>
       <button onclick="changeUrls()">Change links</button>
+      <button onclick="addToTheSecond()">Add 4th item</button>
       <button onclick="addParagraph()">Add paragraph</button>
       <button onclick="firstUlDisappear()">Hide first list</button>
       <button onclick="paintItGreen()">Green list background</button>
     </div>
+
     <div>
-      <h1 onclick="changeTitle()" onmouseover="addClassToTitle()">This is the title of the page</h1>
+      <h1 onclick="makeItClickable()">This is the title of the page</h1>
       <h2>This is the subtitle of the page</h2>
     </div>
 
@@ -38,14 +42,12 @@
         <li>3rd</li>
       </ul>
 
-      <div id="secondListDiv">
-        <button onclick="addToTheSecond()">Add 4th item</button>
-        <ul id="secondList">
-          <li>1st</li>
-          <li>2nd</li>
-          <li>3rd</li>
-        </ul>
-      </div>
+      <ul id="secondList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
 
       <a id="linkToChange" href="strive.school">This link goes to Strive School</a>
 
@@ -78,7 +80,6 @@
       const changeTitle = function (newTitle) {
         let titleChange = document.querySelector("h1")
         titleChange.innerText="THIS IS THE NEW TITLE"
-        titleChange.style.color="green"
       };
 
       /* EXERCISE 2
@@ -160,7 +161,8 @@
       */
 
       const makeItClickable = function () {
-        //
+        let changeColor = document.querySelector("h1")
+        changeColor.style.color="green"
       };
 
       /* EXERCISE 10
