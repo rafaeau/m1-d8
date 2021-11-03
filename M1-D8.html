@@ -56,11 +56,7 @@
       </div>
 
       <div>
-        <input
-          type="text"
-          id="input-field"
-          placeholder="input field for the exercise"
-        />
+        <input type="text" id="input-field" placeholder="input field for the exercise"/>
       </div>
     </div>
 
@@ -71,7 +67,19 @@
         questions!
       </h2>
     </div>
+    
     <script>
+
+      /* window.onload = function () {
+        changeTitle();
+        addClassToTitle();
+        changePcontent();
+        changeUrls();
+        addToTheSecond();
+        addParagraph();
+        firstUlDisappear();
+        paintItGreen()
+      } */
 
       /* EXERCISE 1
        Write a function for changing the title of the document in something else.
@@ -80,7 +88,7 @@
       const changeTitle = function (newTitle) {
         let titleChange = document.querySelector("h1")
         titleChange.innerText="THIS IS THE NEW TITLE"
-      };
+      }
 
       /* EXERCISE 2
        Write a function for changing the class of the title of the page in "myHeading".
@@ -89,7 +97,7 @@
       const addClassToTitle = function () {
         let newClass = document.querySelector("h1")
         newClass.classList.toggle("myHeading")
-      };
+      }
 
       /* EXERCISE 3
        Write a function for changing the text of only the p which are children of a div.
@@ -97,19 +105,29 @@
 
       const changePcontent = function () {
         let pChange = document.querySelectorAll("div p")
-        pChange[0].innerText="NEW TEXT FOR PARAGRAPHS INSIDE A DIV"
-      };
+        for (let i=0; i<pChange.length; i++){
+          pChange[i].innerText="NEW TEXT FOR PARAGRAPHS INSIDE A DIV"
+        }
+      }
 
       /* EXERCISE 4
        Write a function for changing the href property of every link to https://www.google.com
       */
 
       const changeUrls = function () {
+        
+        let urlsChange = document.querySelectorAll("a")
+        for (let i=0; i<urlsChange.length; i++){
+            urlsChange[i].href = "https://www.google.com"
+            urlsChange[i].innerText="This link now goes to Google"
+        }
+        
         /* urlsChange = document.querySelector("#linkToChange")
         urlsChange.href.innerText="https://www.google.com"
         urlsChange.innerText="This link now goes to Google" */
-        document.querySelector("#linkToChange").href = "https://www.google.com"
-        document.querySelector("#linkToChange").innerText="This link now goes to Google"
+
+        /* document.querySelector("#linkToChange").href = "https://www.google.com"
+        document.querySelector("#linkToChange").innerText="This link now goes to Google" */
       };
 
       /* EXERCISE 5
@@ -130,7 +148,7 @@
 
       const addParagraph = function (content) {
         let newParagraph = document.createElement("p")
-        newParagraph.innerText = "THIS IS A NEW PARAGRAPH. THIS IS A NEW PARAGRAPH. THIS IS A NEW PARAGRAPH."
+        newParagraph.innerText = "THIS IS A NEW PARAGRAPH."
         let placeForParagraph = document.querySelector("#addParagraph")
         placeForParagraph.appendChild(newParagraph)
       };
@@ -150,45 +168,69 @@
       */
 
       const paintItGreen = function () {
+        let backList = document.querySelectorAll("ul")
+        for (let i=0; i<backList.length; i++) {
+          backList[i].classList.add("paintLists")
+        }
+      }
+
+      /* const paintItGreen = function () {
         let paintGreen = document.querySelector("ul")
         let paintGreen2 = document.querySelector("#secondList")
         paintGreen.classList.toggle("paintLists")
         paintGreen2.classList.toggle("paintLists")
-      };
+      }; */
 
       /* EXERCISE 9
        Make the heading of the page change color every time the user clicks on it.
       */
 
+      const GetRandomColor = function() {
+            let red = Math.floor(Math.random() * 255)
+            let green = Math.floor(Math.random() * 255)
+            let blue = Math.floor(Math.random() * 255)
+            return 'rgb(' + red + ', ' + green + ', ' + blue + ')'
+      }
+
       const makeItClickable = function () {
+        let randomColor = GetRandomColor()
         let changeColor = document.querySelector("h1")
-        changeColor.style.color="green"
-      };
+        changeColor.style.color = randomColor
+      }
 
       /* EXERCISE 10
        Change the footer text with something else when the user clicks on it.
       */
 
       const changeFooterText = function () {
-        let changeFooter = document.querySelector("#footer")
+        let changeFooter = document.getElementById("footer")
         changeFooter.innerText = "NEW FOOTER!!!!!!!!!!!!!!!!!!!!!!!!!"
         changeFooter.style.color = "blue"
-      };
+      }
 
       /* EXERCISE 11
        Attach an event listener to the input field in the page for console logging its value just after any keystroke.
       */
+ 
+      let inputField = document.getElementById("input-field")
+      inputField.addEventListener("keydown", function(event){
+        console.log(event.target.value)
+      })
 
-      const inputField = document.getElementById("input-field");
-      // ...
-
+      /* const addEvent = function (event) {
+        let inputField = document.getElementById("input-field")
+        console.log(event)
+      }
+      let inputField = document.getElementById("input-field")
+      inputField.addEventListener("keydown", addEvent) */
+      
       /* EXERCISE 12
        Create a welcome alert message when the page successfully loads.
       */
 
       window.onload = function () {
         alert("Alert message!")
-      };
+      }
 
       /* EXERCISE 13
        Use HTML5 tags to properly provide semantic meaning to the different portions of the page.
