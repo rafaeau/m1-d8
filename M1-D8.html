@@ -66,7 +66,7 @@
 
     <div>
       <p>And this text is just for the exercise too!</p>
-      <h2 style="color: red">
+      <h2 id="footer" onclick="changeFooterText()" style="color: red">
         Save this page on your computer and open it with VSCode to get the
         questions!
       </h2>
@@ -170,7 +170,9 @@
       */
 
       const changeFooterText = function () {
-        //
+        let changeFooter = document.querySelector("#footer")
+        changeFooter.innerText = "NEW FOOTER!!!!!!!!!!!!!!!!!!!!!!!!!"
+        changeFooter.style.color = "blue"
       };
 
       /* EXERCISE 11
