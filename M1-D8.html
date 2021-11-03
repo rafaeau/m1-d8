@@ -11,6 +11,9 @@
       .firstListVis{
         visibility: hidden;
       }
+      .paintLists{
+        background-color: green;
+      }
     </style>
   </head>
   <body>
@@ -19,6 +22,7 @@
       <button onclick="changeUrls()">Change links</button>
       <button onclick="addParagraph()">Add paragraph</button>
       <button onclick="firstUlDisappear()">Hide first list</button>
+      <button onclick="paintItGreen()">Green list background</button>
     </div>
     <div>
       <h1 onclick="changeTitle()" onmouseover="addClassToTitle()">This is the title of the page</h1>
@@ -145,7 +149,10 @@
       */
 
       const paintItGreen = function () {
-        //
+        let paintGreen = document.querySelector("ul")
+        let paintGreen2 = document.querySelector("#secondList")
+        paintGreen.classList.toggle("paintLists")
+        paintGreen2.classList.toggle("paintLists")
       };
 
       /* EXERCISE 9
