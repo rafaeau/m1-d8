@@ -9,6 +9,9 @@
   </head>
   <body>
     <div>
+      <button onclick="changePcontent()">Change paragraphs inside a div</button>
+    </div>
+    <div>
       <h1 onclick="changeTitle()" onmouseover="addClassToTitle()">This is the title of the page</h1>
       <h2>This is the subtitle of the page</h2>
     </div>
@@ -75,7 +78,8 @@
       */
 
       const changePcontent = function () {
-        //
+        let pChange = document.querySelectorAll("div p")
+        pChange[0].innerText="NEW TEXT FOR PARAGRAPHS INSIDE A DIV"
       };
 
       /* EXERCISE 4
