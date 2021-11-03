@@ -5,11 +5,15 @@
       .myHeading {
         color: red;
       }
+      #buttons{
+        display: inline;
+      }
     </style>
   </head>
   <body>
-    <div>
+    <div id="buttons">
       <button onclick="changePcontent()">Change paragraphs inside a div</button>
+      <button onclick="changeUrls()">Change links</button>
     </div>
     <div>
       <h1 onclick="changeTitle()" onmouseover="addClassToTitle()">This is the title of the page</h1>
@@ -31,7 +35,7 @@
         <li>3rd</li>
       </ul>
 
-      <a href="strive.school">This link goes to Strive School</a>
+      <a id="linkToChange" href="strive.school">This link goes to Strive School</a>
 
       <div>
         <p>This text is just for the exercise</p>
@@ -87,7 +91,11 @@
       */
 
       const changeUrls = function () {
-        //
+        /* urlsChange = document.querySelector("#linkToChange")
+        urlsChange.href.innerText="https://www.google.com"
+        urlsChange.innerText="This link now goes to Google" */
+        document.querySelector("#linkToChange").href = "https://www.google.com"
+        document.querySelector("#linkToChange").innerText="This link now goes to Google"
       };
 
       /* EXERCISE 5
