@@ -8,6 +8,9 @@
       #buttons, #secondListDiv {
         display: inline;
       }
+      .firstListVis{
+        visibility: hidden;
+      }
     </style>
   </head>
   <body>
@@ -15,6 +18,7 @@
       <button onclick="changePcontent()">Change paragraphs inside a div</button>
       <button onclick="changeUrls()">Change links</button>
       <button onclick="addParagraph()">Add paragraph</button>
+      <button onclick="firstUlDisappear()">Hide first list</button>
     </div>
     <div>
       <h1 onclick="changeTitle()" onmouseover="addClassToTitle()">This is the title of the page</h1>
@@ -131,7 +135,9 @@
       */
 
       const firstUlDisappear = function () {
-        //
+        let hideList = document.querySelector("#firstList")
+        hideList.classList.toggle("firstListVis")
+        /* hideList.style.visibility="hidden" */
       };
 
       /* EXERCISE 8
