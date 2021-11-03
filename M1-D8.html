@@ -9,7 +9,7 @@
   </head>
   <body>
     <div>
-      <h1 onclick="changeTitle()">This is the title of the page</h1>
+      <h1 onclick="changeTitle()" onmouseover="addClassToTitle()">This is the title of the page</h1>
       <h2>This is the subtitle of the page</h2>
     </div>
 
@@ -58,7 +58,7 @@
       const changeTitle = function (newTitle) {
         let titleChange = document.querySelector("h1")
         titleChange.innerText="THIS IS THE NEW TITLE"
-        titleChange.style.color="red"
+        titleChange.style.color="green"
       };
 
       /* EXERCISE 2
@@ -66,7 +66,8 @@
       */
 
       const addClassToTitle = function () {
-        //
+        let newClass = document.querySelector("h1")
+        newClass.classList.toggle("myHeading")
       };
 
       /* EXERCISE 3
