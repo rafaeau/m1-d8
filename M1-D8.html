@@ -5,7 +5,7 @@
       .myHeading {
         color: red;
       }
-      #buttons{
+      #buttons, #secondListDiv {
         display: inline;
       }
     </style>
@@ -29,11 +29,14 @@
         <li>3rd</li>
       </ul>
 
-      <ul id="secondList">
-        <li>1st</li>
-        <li>2nd</li>
-        <li>3rd</li>
-      </ul>
+      <div id="secondListDiv">
+        <button onclick="addToTheSecond()">Add 4th item</button>
+        <ul id="secondList">
+          <li>1st</li>
+          <li>2nd</li>
+          <li>3rd</li>
+        </ul>
+      </div>
 
       <a id="linkToChange" href="strive.school">This link goes to Strive School</a>
 
@@ -103,7 +106,11 @@
       */
 
       const addToTheSecond = function (content) {
-        //
+        let listItem = document.createElement("li")
+        listItem.innerText = "4th"
+        let listToAdd = document.querySelector("#secondList")
+        listToAdd.appendChild(listItem)
+
       };
 
       /* EXERCISE 6
